@@ -1,0 +1,12 @@
+======= BIODATA DIRI =======
+
+Nama Lengkap   : ahmad ilyasa 
+NIM            : 20240040056
+Tempat Lahir   : Sukabumi
+Tanggal Lahir  :  05 april 2004
+Jenis Kelamin  : Laki - laki
+Alamat         : cicurug, Sukabumi
+Hobi           : Desain, Musik, Olahraga
+Pendidikan     : S1 Informatika
+
+============================
