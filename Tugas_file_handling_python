@@ -1,0 +1,50 @@
+import os
+
+# === Input dari user ===
+print("=== Isi Biodata Anda ===")
+nama_lengkap = input("Nama Lengkap       : ")
+nim = input("NIM                : ")
+tempat_lahir = input("Tempat Lahir       : ")
+tanggal_lahir = input("Tanggal Lahir      : ")
+jenis_kelamin = input("Jenis Kelamin      : ")
+alamat = input("Alamat             : ")
+hobi = input("Hobi               : ")
+pendidikan = input("Pendidikan         : ")
+
+# === Format nama folder & file ===
+folder_name = nama_lengkap.replace(" ", "_")
+file_name = folder_name + ".txt"
+file_path = os.path.join(folder_name, file_name)
+
+# === Cek dan buat folder kalau belum ada ===
+if not os.path.exists(folder_name):
+    os.makedirs(folder_name)
+    print(f"Folder '{folder_name}' berhasil dibuat.")
+else:
+    print(f"Folder '{folder_name}' sudah ada.")
+
+# === Isi biodata yang akan ditulis ===
+biodata = f"""\
+======= BIODATA DIRI =======
+
+Nama Lengkap   : {nama_lengkap}
+NIM            : {nim}
+Tempat Lahir   : {tempat_lahir}
+Tanggal Lahir  : {tanggal_lahir}
+Jenis Kelamin  : {jenis_kelamin}
+Alamat         : {alamat}
+Hobi           : {hobi}
+Pendidikan     : {pendidikan}
+
+============================
+"""
+
+# === Tulis biodata ke file (overwrite) ===
+with open(file_path, "w", encoding="utf-8") as file:
+    file.write(biodata)
+    print(f"File '{file_name}' berhasil dibuat/diperbarui.")
+
+# === Tampilkan isi file ===
+print("\n=== Isi File Biodata ===")
+with open(file_path, "r", encoding="utf-8") as file:
+    print(file.read())
